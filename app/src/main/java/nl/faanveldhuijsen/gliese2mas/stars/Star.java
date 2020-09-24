@@ -1,10 +1,9 @@
-package nl.faanveldhuijsen.gliese2mas;
-
-import android.util.Log;
+package nl.faanveldhuijsen.gliese2mas.stars;
 
 import java.lang.reflect.Field;
 import java.util.Map;
 
+import nl.faanveldhuijsen.gliese2mas.config.ByteRange;
 import nl.faanveldhuijsen.gliese2mas.config.Label;
 import nl.faanveldhuijsen.gliese2mas.config.Table;
 
@@ -12,8 +11,9 @@ import nl.faanveldhuijsen.gliese2mas.config.Table;
  * Created by faan1 on 24-Sep-20.
  */
 
-public class GlieseStar {
+public class Star {
 
+    public final int id;
     public String Name;
     public String f_Name;
     public String OName;
@@ -36,13 +36,20 @@ public class GlieseStar {
     public String Note;
 
 
-    public GlieseStar(String row) {
+    public Star(int id, String row) {
+        this.id = id;
+
         for (Map.Entry<String, Label> entry: Table.data_labels.entrySet()) {
             String field = entry.getKey();
             Label label = entry.getValue();
             ByteRange byteRange = label.byteRange;
 
             String column = row.substring(byteRange.x, byteRange.y).trim();
+
+            if (column.equals("---")) {
+                column = "0";
+            }
+
             if (label.type == Float.class) {
                 Float column1 = Float.valueOf((String) column);
                 set(field, column1);
@@ -65,5 +72,13 @@ public class GlieseStar {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public String getId() {
+        return String.valueOf(this.id + 1);
+    }
+
+    public String getName() {
+        return String.format("%s (%s)", Name, OName);
     }
 }

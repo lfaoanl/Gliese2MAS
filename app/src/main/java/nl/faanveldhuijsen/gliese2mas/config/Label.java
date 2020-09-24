@@ -1,7 +1,5 @@
 package nl.faanveldhuijsen.gliese2mas.config;
 
-import nl.faanveldhuijsen.gliese2mas.ByteRange;
-
 /**
  * Created by faan1 on 24-Sep-20.
  */

@@ -1,4 +1,4 @@
-package nl.faanveldhuijsen.gliese2mas;
+package nl.faanveldhuijsen.gliese2mas.config;
 
 /**
  * Created by faan1 on 24-Sep-20.

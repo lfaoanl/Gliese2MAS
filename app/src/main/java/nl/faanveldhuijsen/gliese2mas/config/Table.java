@@ -1,6 +1,7 @@
 package nl.faanveldhuijsen.gliese2mas.config;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 /**
  * Created by faan1 on 24,Sep, 20.
@@ -8,7 +9,7 @@ import java.util.HashMap;
 
 public class Table {
 
-    public static final HashMap<String, Label> data_labels = new HashMap<>();
+    public static final HashMap<String, Label> data_labels = new LinkedHashMap<>();
 
     public Table() {
         data_labels.put("Name",   new Label(0, 21));
