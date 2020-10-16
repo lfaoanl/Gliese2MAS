@@ -38,7 +38,8 @@ public class GlieseTableActivity extends AppCompatActivity {
         super();
 
         labels.put("id", "ID");
-        labels.put("name", "Name");
+        labels.put("common", "Name");
+        labels.put("name", "Title");
 
         table = new Table();
 
@@ -73,8 +74,12 @@ public class GlieseTableActivity extends AppCompatActivity {
         textId.setText(String.valueOf(star.getId()));
         row.addView(textId);
 
+        TextView textCommon = getTextView();
+        textCommon.setText(star.CommonName);
+        row.addView(textCommon);
+
         TextView textName = getTextView();
-        textName.setText(star.getName());
+        textName.setText(star.getName(true));
         row.addView(textName);
 
         row.setOnClickListener(new View.OnClickListener() {

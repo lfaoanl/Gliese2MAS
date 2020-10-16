@@ -18,7 +18,6 @@ public class Table {
         data_labels.put("RAh",    new Label(36, 38, Float.class));
         data_labels.put("RAm",    new Label(39, 41, Float.class));
         data_labels.put("RAs",    new Label(42, 47, Float.class));
-
         data_labels.put("DEd",    new Label(48, 51, Float.class));
         data_labels.put("DEm",    new Label(52, 54, Float.class));
         data_labels.put("DEs",    new Label(55, 59, Float.class));
@@ -26,11 +25,11 @@ public class Table {
         data_labels.put("pmRA",   new Label(61, 67, Float.class));
         data_labels.put("l_pmDE", new Label(68, 69));
         data_labels.put("pmDE",   new Label(69, 75, Float.class));
-        data_labels.put("_2MASS",  new Label(76, 93));
+        data_labels.put("_2MASS", new Label(76, 93));
         data_labels.put("Jmag",   new Label(94, 100, Float.class));
         data_labels.put("Hmag",   new Label(101, 107, Float.class));
         data_labels.put("Ksmag",  new Label(108, 114, Float.class));
-        data_labels.put("Com",    new Label(115, 132));
+        data_labels.put("Com",    new Label(115, 255));
     }
 
 }
